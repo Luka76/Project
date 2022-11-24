@@ -18,8 +18,9 @@ const Home = () => {
     const images = fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setImages(data.hits);
+        setImages(data);
         console.log(data);
+        console.log(images);
       });
   };
 
@@ -61,7 +62,7 @@ const Home = () => {
         <div className="grid grid-cols-3 grid-rows-3 gap-2 mt-5">
           {images?.hits?.map((image) => (
             <div key={image?.id}>
-              <Image url={image?.userImageURL} id={image?.id} />
+              <Image url={image?.webformatURL} id={image?.id} />
             </div>
           ))}
         </div>

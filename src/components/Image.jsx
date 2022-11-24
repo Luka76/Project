@@ -19,50 +19,50 @@ const Image = ({ url, id }) => {
       >
         <img
           src={url}
-          alt="nature"
-          className="rounded-lg w-full object-cover"
-          style={{ height: "450px", width: "450px" }}
+          alt={url}
+          className="rounded-sm object-cover scale-100"
+          style={{ height: "350px", width: "100%" }}
         />
         {postHovered && (
           <>
             <div
-              className="absolute top-1/2 left-1/2 w-full h-full flex flex-col justify-between p-1  pt-2 pb-2 z-50"
+              className="absolute top-1/3  w-full h-full flex flex-col justify-between p-1  pt-2 pb-2 z-50"
               style={{ height: "100%" }}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-center ">
                 <div className="flex gap-2">
                   {liked ? (
                     <button
                       type="button"
-                      className="opacity-75 hover:opacity-100 hover:shadow-md"
+                      className="opacity-75 hover:opacity-100 hover:shadow-md cursor-pointer"
                       onClick={() => {
                         setLiked(false);
                       }}
                     >
                       <BsHeartFill
-                        fontSize={40}
+                        fontSize={80}
                         className="text-red-600 border-black shadow-sm m-2"
                       />
                     </button>
                   ) : (
                     <button
                       type="button"
-                      className="opacity-75 hover:opacity-100 hover:shadow-md"
+                      className="opacity-75 hover:opacity-100 hover:shadow-md cursor-pointer"
                       onClick={() => {
                         setLiked(true);
                       }}
                     >
-                      <AiOutlineHeart fontSize={40} />
+                      <AiOutlineHeart fontSize={80} />
                     </button>
                   )}
                 </div>
               </div>
             </div>
             <div
-              className="absolute top-0 left-0 w-full h-full flex flex-col justify-between p-1  pt-2 pb-2 z-50"
+              className="absolute top-0 right-0 w-full h-full flex flex-col  p-1  pt-2 pb-2 z-50"
               style={{ height: "100%" }}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex justify-end">
                 <div className="flex gap-2">
                   <button
                     onClick={() => setShowModal(true)}
