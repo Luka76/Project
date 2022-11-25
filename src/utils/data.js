@@ -50,3 +50,19 @@ const images = [
 ];
 
 export default images;
+
+export const likedImages = ({ images }) => {
+  const query = `*[_type == 'liked'] | order(_createdAt desc) {
+    image{
+      asset->{
+        url
+      }
+    },
+    _id,
+    save[]{
+      _id
+      },
+    },
+  }`;
+  return query;
+};

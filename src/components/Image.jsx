@@ -4,7 +4,7 @@ import { BsHeartFill, BsArrowsFullscreen } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import Modal from "./Modal";
 
-const Image = ({ url, id }) => {
+const Image = ({ url }) => {
   const [postHovered, setPostHovered] = useState(false);
   const [liked, setLiked] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -34,25 +34,28 @@ const Image = ({ url, id }) => {
                   {liked ? (
                     <button
                       type="button"
-                      className="opacity-75 hover:opacity-100 hover:shadow-md cursor-pointer"
+                      className="cursor-pointer opacity-75 hover:opacity-100 hover:shadow-md "
                       onClick={() => {
                         setLiked(false);
                       }}
                     >
                       <BsHeartFill
                         fontSize={80}
-                        className="text-red-600 border-black shadow-sm m-2"
+                        className="text-red-600 border-black shadow-sm m-2 cursor-pointer"
                       />
                     </button>
                   ) : (
                     <button
                       type="button"
-                      className="opacity-75 hover:opacity-100 hover:shadow-md cursor-pointer"
+                      className="cursor-pointer opacity-75 hover:opacity-100 hover:shadow-md "
                       onClick={() => {
                         setLiked(true);
                       }}
                     >
-                      <AiOutlineHeart fontSize={80} />
+                      <AiOutlineHeart
+                        fontSize={80}
+                        className="cursor-pointer"
+                      />
                     </button>
                   )}
                 </div>

@@ -4,8 +4,12 @@ import { useNavigate } from "react-router-dom";
 import home from "../assets/home.svg";
 import Image from "../components/Image";
 
-const LikedPictures = (url) => {
+// import { likedImages } from "../utils/data";
+
+const LikedPictures = ({ images }) => {
   const navigate = useNavigate();
+
+  // const savedImagesQuery = likedImages(images);
 
   return (
     <div className="w-full h-150">
@@ -25,7 +29,12 @@ const LikedPictures = (url) => {
       </div>
 
       <div className="grid grid-cols-4 grid-row-4 gap-3 mt-10">
-        <Image url={url} />
+        {/* {savedImagesQuery.map((image) => {
+          <div className="grid grid-cols-3 grid-flow-row gap-2">
+            <Image url={savedImagesQuery.url} />
+          </div>
+        })} */}
+        <Image url={images.url} />
       </div>
     </div>
   );

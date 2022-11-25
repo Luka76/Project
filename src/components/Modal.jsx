@@ -10,6 +10,20 @@ const Modal = ({ visible, onClose, liked, url }) => {
 
   if (!visible) return null;
 
+  const likePicture = () => {
+    // (!liked){
+    //   .patch(id)
+    //   .setIfMissing({ save })
+    //   .insert("after", "save[-1]", [{
+    //     key: images.id,
+    //   }])
+    //   .commit()
+    //   .then(()=>{window.location.reload()})
+    // } else{
+    //     .delete (id)
+    // }
+  };
+
   return (
     <div
       id="picture"
@@ -34,7 +48,7 @@ const Modal = ({ visible, onClose, liked, url }) => {
           <button
             type="button"
             className="absolute  opacity-80 hover:opacity-100 hover:shadow-md cursor-pointer"
-            //   To do - make clicking on like functional !
+            //   To do - make clicking on unlike functional !
             onClick={() => {}}
           >
             <BsHeartFill
@@ -47,7 +61,9 @@ const Modal = ({ visible, onClose, liked, url }) => {
             type="button"
             className="absolute top-1/2 left-1/2 opacity-80 hover:opacity-100 hover:shadow-md cursor-pointer"
             //   To do - make clicking on like functional !
-            onClick={() => {}}
+            onClick={(e) => {
+              likePicture();
+            }}
           >
             <AiOutlineHeart fontSize={70} />
           </button>
